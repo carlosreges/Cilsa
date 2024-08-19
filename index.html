@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales</title>
+    <link rel="stylesheet" href="styles.css" id="main-stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Datos Personales</h2>
+        <form id="personal-form" action="#" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="email-error" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+            </div>
+            <div class="form-group">
+                <label for="pais-residencia">País de residencia:</label>
+                <select id="pais-residencia" name="pais-residencia" required>
+                    <option value="">Seleccione su país</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="mexico">México</option>
+                    <option value="espana">España</option>
+                    <option value="chile">Chile</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="peru">Perú</option>
+                    <option value="venezuela">Venezuela</option>
+                    <!-- Agregar más opciones de países según sea necesario -->
+                </select>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        <button id="toggle-contrast">Alto Contraste</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
