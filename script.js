@@ -7,29 +7,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Alternar entre el estilo normal y el alto contraste
   toggleButton.addEventListener('click', () => {
-      if (mainStylesheet.getAttribute('href') === 'styles.css') {
-          mainStylesheet.setAttribute('href', 'high-contrast.css');
-          toggleButton.textContent = 'Modo Normal';
-      } else {
-          mainStylesheet.setAttribute('href', 'styles.css');
-          toggleButton.textContent = 'Alto Contraste';
-      }
+    if (mainStylesheet.getAttribute('href') === 'styles.css') {
+      mainStylesheet.setAttribute('href', 'high-contrast.css');
+      toggleButton.textContent = 'Modo Normal';
+    } else {
+      mainStylesheet.setAttribute('href', 'styles.css');
+      toggleButton.textContent = 'Alto Contraste';
+    }
   });
 
   // Validación del formato de email
   form.addEventListener('submit', (event) => {
-      const emailValue = emailInput.value;
-      if (!validateEmail(emailValue)) {
-          emailError.textContent = 'Por favor, ingrese un email válido.';
-          emailError.style.color = 'red';
-          event.preventDefault();
-      } else {
-          emailError.textContent = '';
-      }
+    const emailValue = emailInput.value;
+    if (!validateEmail(emailValue)) {
+      emailError.textContent = 'Por favor, ingrese un email válido.';
+      emailError.style.color = 'red';
+      event.preventDefault();
+    } else {
+      emailError.textContent = 'Email enviado con éxito.';
+      alert('Email enviado con exito.');
+    }
   });
 
   function validateEmail(email) {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailPattern.test(email);
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
   }
 });
